@@ -10,7 +10,9 @@
 
 Expo SDK 58 · React Native 0.88 · Kotlin · Android 16 (API 36)
 
-[What it does](#what-it-does) · [Screenshots](#screenshots) · [The equalizer](#the-equalizer-how-music-becomes-moving-bars) · [The widgets](#the-widgets-three-panels-that-never-go-stale) · [Build it](#build-and-run-it-yourself)
+[<img src="https://img.shields.io/badge/Download-APK%20v1.0.0-38E1FF?style=for-the-badge&logo=android&logoColor=white" alt="Download APK" height="34" />](https://github.com/amiitdev/smart-desk-display/releases/latest/download/smart-desk-display-1.0.0.apk)
+
+[What it does](#what-it-does) · [Screenshots](#screenshots) · [The equalizer](#the-equalizer-how-music-becomes-moving-bars) · [The widgets](#the-widgets-three-panels-that-never-go-stale) · [Download & install](#download-and-install) · [Build it](#build-and-run-it-yourself)
 
 </div>
 
@@ -249,6 +251,37 @@ screenshots/                   images used in this README
 
 ---
 
+## Download and install
+
+**Latest release: v1.0.0** — `versionCode 1`, `versionName 1.0.0`, minSdk 24, targetSdk 36 (Android 16).
+
+| | |
+| --- | --- |
+| 📦 **APK** | [`smart-desk-display-1.0.0.apk`](https://github.com/amiitdev/smart-desk-display/releases/download/v1.0.0/smart-desk-display-1.0.0.apk) (84 MB) |
+| 🏷️ **Release** | [v1.0.0](https://github.com/amiitdev/smart-desk-display/releases/tag/v1.0.0) |
+
+```bash
+# over USB
+adb install -r smart-desk-display-1.0.0.apk
+
+# or copy the APK to the phone and tap it
+# (allow "install unknown apps" for your file manager the first time)
+```
+
+After installing, open **Settings → Permissions** inside the app: it lists every permission with a
+numbered walkthrough and a live GRANTED / REQUIRED badge.
+
+> The APK is signed with the debug keystore so it installs without extra setup. Generate your own
+> keystore before distributing it anywhere.
+
+### Version history
+
+| Version | Date | Notes |
+| --- | --- | --- |
+| **1.0.0** | 2026-11-20 | First release: dashboard, beat meter with Android 16 microphone fallback, three widgets, tasks, weather, media remote. |
+
+---
+
 ## Build and run it yourself
 
 Requirements: Node 20+, JDK 17, Android SDK with platform 36, a device on `adb`.
@@ -313,6 +346,7 @@ npm run build:release # release APK
 - Some apps route audio in ways the global `Visualizer` cannot see; those fall back to the microphone (the `MIC` badge tells you).
 - The microphone fallback hears the room, so it also reacts to loud speech. It is a beat meter, not a studio analyser.
 - The release APK is signed with the debug keystore. Generate a real keystore before publishing.
+- The downloadable APK is built for `arm64-v8a` phones of the Android 16 era; rebuild from source for other targets.
 
 ---
 
