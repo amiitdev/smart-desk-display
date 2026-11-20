@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="widget_small_label">Smart Desk · Clock</string>
+    <string name="widget_small_description">Clock, date, weather and battery.</string>
+    <string name="widget_medium_label">Smart Desk · Music</string>
+    <string name="widget_medium_description">Clock, weather, music controls and battery.</string>
+    <string name="widget_large_label">Smart Desk · Full</string>
+    <string name="widget_large_description">Clock, calendar, weather, music, tasks and network state.</string>
+    <string name="smartdesk_media_listener_label">Smart Desk media access</string>
+</resources>

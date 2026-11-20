@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="wd_bg">#FF010B1E</color>
+    <color name="wd_card">#FF04182C</color>
+    <color name="wd_cyan">#FF38E1FF</color>
+    <color name="wd_cyan_dim">#FF8FB6D4</color>
+    <color name="wd_text">#FFEAF8FF</color>
+    <color name="wd_muted">#FF8FB6D4</color>
+    <color name="wd_dim">#FF5C86A6</color>
+    <color name="wd_yellow">#FFFDDC2C</color>
+    <color name="wd_green">#FF2BFF5E</color>
+    <color name="wd_red">#FFFF5A6E</color>
+    <color name="wd_weather">#FF7FD6FB</color>
+    <color name="wd_rule">#FF123A5A</color>
+</resources>

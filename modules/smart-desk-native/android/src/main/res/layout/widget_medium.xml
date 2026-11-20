@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Medium widget (4x2): clock, weather, media transport, battery and network. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/widget_background"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextClock
+                android:id="@+id/widget_clock"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dseg7"
+                android:format12Hour="h:mm"
+                android:format24Hour="HH:mm"
+                android:includeFontPadding="false"
+                android:letterSpacing="0.04"
+                android:shadowColor="#8038E1FF"
+                android:shadowRadius="8"
+                android:textColor="@color/wd_text"
+                android:textSize="26sp" />
+
+            <TextView
+                android:id="@+id/widget_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="1 Jan · Monday"
+                android:textColor="@color/wd_muted"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/widget_temp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="—"
+                android:textColor="@color/wd_cyan"
+                android:textSize="26sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/widget_weather"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="No weather"
+                android:textColor="@color/wd_muted"
+                android:textSize="9sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="6dp"
+        android:background="@color/wd_rule" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/widget_music_icon"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:contentDescription="Now playing"
+            android:src="@drawable/ic_music"
+            android:tint="@color/wd_cyan" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/widget_media_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="No media session"
+                android:textColor="@color/wd_text"
+                android:textSize="11sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/widget_media_artist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:text="Grant media access"
+                android:textColor="@color/wd_muted"
+                android:textSize="9sp" />
+        </LinearLayout>
+
+        <ImageButton
+            android:id="@+id/widget_media_previous"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:background="@drawable/widget_button_background"
+            android:contentDescription="Previous"
+            android:padding="7dp"
+            android:src="@drawable/ic_previous"
+            android:tint="@color/wd_text" />
+
+        <ImageButton
+            android:id="@+id/widget_media_toggle"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/widget_button_background"
+            android:contentDescription="Play or pause"
+            android:padding="7dp"
+            android:src="@drawable/ic_play"
+            android:tint="@color/wd_text" />
+
+        <ImageButton
+            android:id="@+id/widget_media_next"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="4dp"
+            android:background="@drawable/widget_button_background"
+            android:contentDescription="Next"
+            android:padding="7dp"
+            android:src="@drawable/ic_next"
+            android:tint="@color/wd_text" />
+    </LinearLayout>
+
+    <!-- Optional: mini calendar (shown when the widget is tall) -->
+    <LinearLayout
+        android:id="@+id/widget_medium_calendar_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/WidgetCalendarCell"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="Su"
+                android:textColor="@color/wd_muted"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/WidgetCalendarCell"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="Mo"
+                android:textColor="@color/wd_muted"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/WidgetCalendarCell"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="Tu"
+                android:textColor="@color/wd_muted"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/WidgetCalendarCell"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="We"
+                android:textColor="@color/wd_muted"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/WidgetCalendarCell"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="Th"
+                android:textColor="@color/wd_muted"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/WidgetCalendarCell"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="Fr"
+                android:textColor="@color/wd_muted"
+                android:textStyle="bold" />
+
+            <TextView
+                style="@style/WidgetCalendarCell"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:text="Sa"
+                android:textColor="@color/wd_muted"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/widget_medium_calendar_weeks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <!-- Optional: next tasks (shown when the widget is tall) -->
+    <LinearLayout
+        android:id="@+id/widget_medium_tasks_block"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/widget_medium_tasks_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="TASKS"
+                android:textColor="@color/wd_yellow"
+                android:textSize="9sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/widget_medium_tasks_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="6dp"
+                android:maxLines="1"
+                android:text="0 open"
+                android:textColor="@color/wd_muted"
+                android:textSize="9sp" />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="open app →"
+                android:textColor="@color/wd_dim"
+                android:textSize="8sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/widget_medium_tasks"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="vertical" />
+    </LinearLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/widget_battery_icon"
+            android:layout_width="12dp"
+            android:layout_height="12dp"
+            android:contentDescription="Battery"
+            android:src="@drawable/ic_battery"
+            android:tint="@color/wd_green" />
+
+        <TextView
+            android:id="@+id/widget_battery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="3dp"
+            android:maxLines="1"
+            android:text="--%"
+            android:textColor="@color/wd_green"
+            android:textSize="10sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/widget_network"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:maxLines="1"
+            android:text="Offline"
+            android:textColor="@color/wd_muted"
+            android:textSize="9sp" />
+
+        <FrameLayout
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/widget_network_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/wd_dim"
+            android:textSize="9sp" />
+    </LinearLayout>
+</LinearLayout>

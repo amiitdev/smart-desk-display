@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- One calendar week: 7 cells, filled from WidgetViews. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="16dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/cell0"
+        style="@style/WidgetCalendarCell" />
+
+    <TextView
+        android:id="@+id/cell1"
+        style="@style/WidgetCalendarCell" />
+
+    <TextView
+        android:id="@+id/cell2"
+        style="@style/WidgetCalendarCell" />
+
+    <TextView
+        android:id="@+id/cell3"
+        style="@style/WidgetCalendarCell" />
+
+    <TextView
+        android:id="@+id/cell4"
+        style="@style/WidgetCalendarCell" />
+
+    <TextView
+        android:id="@+id/cell5"
+        style="@style/WidgetCalendarCell" />
+
+    <TextView
+        android:id="@+id/cell6"
+        style="@style/WidgetCalendarCell" />
+</LinearLayout>

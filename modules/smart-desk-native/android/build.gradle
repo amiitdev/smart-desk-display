@@ -1,0 +1,32 @@
+// Home-screen widgets are built with plain RemoteViews (no Jetpack Glance).
+// Glance's ViewStub based RemoteViews is not inflated by some OEM launchers
+// (vivo/OriginOS shows the white loading layout forever), so the widgets render
+// themselves with ordinary framework views instead. Only WorkManager is needed
+// for the periodic weather refresh.
+plugins {
+  id 'com.android.library'
+  id 'expo-module-gradle-plugin'
+}
+
+group = 'expo.modules.smartdesknative'
+version = '1.0.0'
+
+android {
+  namespace "expo.modules.smartdesknative"
+  defaultConfig {
+    versionCode 1
+    versionName "1.0.0"
+  }
+  lintOptions {
+    abortOnError false
+  }
+}
+
+dependencies {
+  implementation "androidx.work:work-runtime-ktx:2.12.0"
+  implementation "androidx.core:core-ktx:1.19.1"
+  // Needed by the SystemAudioVisualizer RN module (audio/) which is registered
+  // from MainApplication. expo-modules-core declares this as `implementation`,
+  // so it is not on our compile classpath automatically.
+  implementation "com.facebook.react:react-android"
+}
