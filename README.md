@@ -204,13 +204,22 @@ Every permission explained in plain language with numbered steps and a live GRAN
 
 ```mermaid
 flowchart TD
-  UI[React Native / Expo Router] -->|typed bridge| MOD[Expo module: SmartDeskNative]
-  UI -->|events| BEAT[RN module: SystemAudioVisualizer]
-  MOD --> STORE[(DashboardStore<br/>SharedPreferences)]
-  MOD --> MEDIA[MediaRepository<br/>notification listener]
-  MOD --> SYS[Battery / Network / System readers]
-  STORE --> WIDGET[RemoteViews widgets]
-  STORE --> WORK[WorkManager 15 min]
+  UI[React Native + Expo Router]
+  MOD[Expo module SmartDeskNative]
+  BEAT[RN module SystemAudioVisualizer]
+  STORE[(DashboardStore SharedPreferences)]
+  MEDIA[MediaRepository notification listener]
+  SYS[Battery, network, system readers]
+  WIDGET[RemoteViews widgets]
+  WORK[WorkManager 15 min]
+
+  UI -->|typed bridge| MOD
+  UI -->|events| BEAT
+  MOD --> STORE
+  MOD --> MEDIA
+  MOD --> SYS
+  STORE --> WIDGET
+  STORE --> WORK
   MEDIA --> UI
   BEAT --> UI
 ```
